@@ -110,18 +110,42 @@ removePath
 ~~~~~~~~~~
 
 Removes a path and frees the memory it used.
+This function returns true if the path was either deleted or didn't exist in the first place.
+It returns false if the path could not be removed because it is running.
 
 .. tabs ::
    .. tab :: Prototype
       .. highlight:: cpp
       ::
 
-        void removePath(const std::string &ipathId)
+        bool removePath(const std::string &ipathId)
+
+**Returns:** True if the path no longer exists
 
 ============ ===============================================================
  Parameters
 ============ ===============================================================
  ipathId      A unique identifier for the path, previously passed to ``generatePath()``.
+============ ===============================================================
+
+----
+
+forceRemovePath
+~~~~~~~~~~~~~~~
+
+Attempts to remove a path without stopping execution, then if that fails, disables the controller and removes the path.
+
+.. tabs ::
+   .. tab :: Prototype
+      .. highlight:: cpp
+      ::
+
+        void forceRemovePath(const std::string &ipathId)
+
+============ ===============================================================
+ Parameters
+============ ===============================================================
+ ipathId      The path ID that will be removed.
 ============ ===============================================================
 
 ----
@@ -472,7 +496,7 @@ The path can then be run with ``setTarget`` as if it had been just generated.
       .. highlight:: cpp
       ::
 
-        void loadPath(std::string idirectory, std::string ipathId)
+        void loadPath(const std::string &idirectory, const std::string &ipathId)
 
 ============ ===============================================================
  Parameters
@@ -497,7 +521,7 @@ The path is stored as two files, <ipathId>.left.csv and <ipathId>.right.csv.
       .. highlight:: cpp
       ::
 
-        void storePath(std::string idirectory, std::string ipathId)
+        void storePath(const std::string &idirectory, const std::string &ipathId)
 
 ============ ===============================================================
  Parameters
