@@ -111,7 +111,7 @@ Log at the ``LogLevel::debug`` level.
       .. highlight:: cpp
       ::
 
-        template <typename T> constexpr void debug(T ilazyMessage) const noexcept
+        template <typename T> void debug(T ilazyMessage) noexcept
 
 ============ ===============================================================
  Parameters
@@ -147,7 +147,7 @@ Log at the ``LogLevel::info`` level.
       .. highlight:: cpp
       ::
 
-        template <typename T> constexpr void info(T ilazyMessage) const noexcept
+        template <typename T> void info(T ilazyMessage) noexcept
 
 ============ ===============================================================
  Parameters
@@ -183,7 +183,7 @@ Log at the ``LogLevel::warn`` level.
       .. highlight:: cpp
       ::
 
-        template <typename T> constexpr void warn(T ilazyMessage) const noexcept
+        template <typename T> void warn(T ilazyMessage) noexcept
 
 ============ ===============================================================
  Parameters
@@ -219,7 +219,7 @@ Log at the ``LogLevel::error`` level.
       .. highlight:: cpp
       ::
 
-        template <typename T> constexpr void error(T ilazyMessage) const noexcept
+        template <typename T> void error(T ilazyMessage) noexcept
 
 ============ ===============================================================
  Parameters
